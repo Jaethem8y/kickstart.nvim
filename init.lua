@@ -167,6 +167,8 @@ vim.o.confirm = true
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+-- filetree toggle
+vim.keymap.set("n", "\\", ":Neotree toggle<CR>", { noremap = true, silent = true })
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -945,6 +947,17 @@ require('lazy').setup({
         end,
       })
     end,
+  },
+
+  -- file tree on the left side
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
   },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
